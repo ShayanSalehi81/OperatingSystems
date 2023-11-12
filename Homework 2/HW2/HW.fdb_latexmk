@@ -1,10 +1,10 @@
 # Fdb version 4
-["xdvipdfmx"] 1697390663 "HW.xdv" "HW.pdf" "HW" 1697390663 0
-  "HW.xdv" 1697390662 17272 0b9397efce8a0490611116b9e850710b "xelatex"
+["xdvipdfmx"] 1699701919 "HW.xdv" "HW.pdf" "HW" 1699701919 0
+  "HW.xdv" 1699701918 52500 43fdf4b777ca10577a21192dc7361cf2 "xelatex"
   (generated)
   "HW.pdf"
   (rewritten before read)
-["xelatex"] 1697390658 "d:/Term 07/Embedding System/HW1/HW.tex" "HW.xdv" "HW" 1697390663 0
+["xelatex"] 1699701916 "d:/Term 07/Operating-Systems/Homework 2/HW2/HW.tex" "HW.xdv" "HW" 1699701919 0
   "C:/Program Files/MiKTeX/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136759654 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
   "C:/Program Files/MiKTeX/tex/generic/atbegshi/atbegshi.sty" 1575571100 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
   "C:/Program Files/MiKTeX/tex/generic/bigintcalc/bigintcalc.sty" 1576433602 40635 c40361e206be584d448876bba8a64a3b ""
@@ -156,13 +156,14 @@
   "C:/Program Files/MiKTeX/tex/xelatex/xepersian/xepersian.sty" 1667129856 54585 b300d6b8a9c3de50c8d582d10f7f3fd7 ""
   "C:/Program Files/MiKTeX/tex/xelatex/xetex-pstricks/pstricks.con" 1266284760 204 366747485ba2670f55166e66d1f21249 ""
   "C:/Users/Eye Patch/AppData/Local/MiKTeX/miktex/data/le/xetex/xelatex.fmt" 1683914123 36428414 3d658bbc48afc67546175ac8f194f841 ""
-  "HW.aux" 1697390662 555 8b8add3d41b6da84b343a9939cbd0b14 "xelatex"
-  "HW.out" 1697390662 0 d41d8cd98f00b204e9800998ecf8427e "xelatex"
-  "HW.tex" 1697389744 277 e04f5caeff01160b42bb6c1509523a6f ""
-  "commons/course.sty" 1697390578 6726 2041ba63c5b1da1e760fc895930bb957 ""
+  "HW.aux" 1699701918 555 e69e5f47e820f35bb0a9ca451d75729e "xelatex"
+  "HW.out" 1699701918 0 d41d8cd98f00b204e9800998ecf8427e "xelatex"
+  "HW.tex" 1699700922 328 7abaa475498cfac117a9246cc4c28733 ""
+  "commons/course.sty" 1699697704 6724 71edd84c7605d838b1d5a1f6978ab793 ""
   "commons/sharif.png" 1674235234 34782 91c831e22cd5b8b30cdd0d7fa2b74a71 ""
-  "d:/Term 07/Embedding System/HW1/HW.tex" 1697389744 277 e04f5caeff01160b42bb6c1509523a6f ""
-  "questions/1.tex" 1697390655 2643 9d9ce581ad923eeb53327dfb0609ec7b ""
+  "d:/Term 07/Operating-Systems/Homework 2/HW2/HW.tex" 1699700922 328 7abaa475498cfac117a9246cc4c28733 ""
+  "questions/1.tex" 1699700887 7183 3e3d64c5fd735b61384f0e33d68bd06e ""
+  "questions/2.tex" 1699701913 1633 ac36810de73fad4b7f2c9fa16ee594b8 ""
   (generated)
   "HW.aux"
   "HW.log"

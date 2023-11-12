@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.12) (preloaded format=xelatex 2023.5.12)  15 OCT 2023 20:54
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.12) (preloaded format=xelatex 2023.5.12)  11 NOV 2023 14:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"d:/Term 07/Embedding System/HW1/HW.tex"
-(d:/Term 07/Embedding System/HW1/HW.tex
+**"d:/Term 07/Operating-Systems/Homework 2/HW2/HW.tex"
+(d:/Term 07/Operating-Systems/Homework 2/HW2/HW.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-01-16> (C:\Program Files\MiKTeX\tex/latex/base\article.cls
 Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
@@ -881,22 +881,22 @@ LaTeX Font Info:    Font shape `TU/XBNiloofar.ttf(0)/b/n' will be
 (Font)              scaled to size 14.39996pt on input line 10.
 LaTeX Font Info:    Font shape `TU/XBNiloofar.ttf(1)/b/n' will be
 (Font)              scaled to size 14.39996pt on input line 10.
-(questions/1.tex)
+(questions/1.tex
 LaTeX Font Info:    Font shape `TU/XBNiloofar.ttf(1)/m/n' will be
-(Font)              scaled to size 11.99997pt on input line 12.
+(Font)              scaled to size 11.99997pt on input line 22.
  [1
 
-] (HW.aux)
+]) [2] (questions/2.tex) [3] (HW.aux)
 Package rerunfilecheck Info: File `HW.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 25108 strings out of 411564
- 467679 string characters out of 2824404
- 1854985 words of memory out of 3000000
- 44827 multiletter control sequences out of 15000+600000
- 512911 words of font info for 66 fonts, out of 8000000 for 9000
+ 25117 strings out of 411564
+ 467957 string characters out of 2824404
+ 1859985 words of memory out of 3000000
+ 44831 multiletter control sequences out of 15000+600000
+ 512919 words of font info for 67 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 90i,5n,101p,1356b,339s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 90i,5n,101p,1368b,341s stack positions out of 10000i,1000n,20000p,200000b,80000s
 
-Output written on HW.xdv (1 page, 17272 bytes).
+Output written on HW.xdv (3 pages, 52500 bytes).
