@@ -1090,6 +1090,38 @@ OUTPUT HW.xdv
 INPUT .\questions\2.tex
 INPUT questions\2.tex
 INPUT questions\2.tex
+INPUT .\questions\3.tex
+INPUT questions\3.tex
+INPUT questions\3.tex
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
+INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsa.fd
+INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsa.fd
+INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsa.fd
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam7.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam5.tfm
+INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsb.fd
+INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsb.fd
+INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsb.fd
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm5.tfm
+INPUT .\questions\4.tex
+INPUT questions\4.tex
+INPUT questions\4.tex
+INPUT .\questions\5.tex
+INPUT questions\5.tex
+INPUT questions\5.tex
+INPUT .\questions\6.tex
+INPUT questions\6.tex
+INPUT questions\6.tex
+INPUT .\questions\7.tex
+INPUT questions\7.tex
+INPUT questions\7.tex
+INPUT .\questions\8.tex
+INPUT questions\8.tex
+INPUT questions\8.tex
 INPUT HW.aux
 INPUT .\HW.out
 INPUT .\HW.out

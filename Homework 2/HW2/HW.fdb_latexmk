@@ -1,11 +1,18 @@
 # Fdb version 4
-["xdvipdfmx"] 1699701919 "HW.xdv" "HW.pdf" "HW" 1699701919 0
-  "HW.xdv" 1699701918 52500 43fdf4b777ca10577a21192dc7361cf2 "xelatex"
+["xdvipdfmx"] 1699823363 "HW.xdv" "HW.pdf" "HW" 1699823363 0
+  "HW.xdv" 1699823362 139624 24653d53b5a509026ee18fb844097ad2 "xelatex"
   (generated)
   "HW.pdf"
   (rewritten before read)
-["xelatex"] 1699701916 "d:/Term 07/Operating-Systems/Homework 2/HW2/HW.tex" "HW.xdv" "HW" 1699701919 0
+["xelatex"] 1699823358 "d:/Term 07/Operating-Systems/Homework 2/HW2/HW.tex" "HW.xdv" "HW" 1699823363 0
   "C:/Program Files/MiKTeX/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136759654 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
+  "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
+  "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1233951854 916 f87d7c45f9c908e672703b83b72241a3 ""
+  "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/symbols/msam5.tfm" 1233951854 924 9904cf1d39e9767e7a3622f2a125a565 ""
+  "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/symbols/msam7.tfm" 1233951854 928 2dc8d444221b7a635bb58038579b861a ""
+  "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/symbols/msbm10.tfm" 1233951854 908 2921f8a10601f252058503cc6570e581 ""
+  "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/symbols/msbm5.tfm" 1233951854 940 75ac932a52f80982a9f8ea75d03a34cf ""
+  "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/symbols/msbm7.tfm" 1233951854 940 228d6584342e91276bf566bcf9716b83 ""
   "C:/Program Files/MiKTeX/tex/generic/atbegshi/atbegshi.sty" 1575571100 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
   "C:/Program Files/MiKTeX/tex/generic/bigintcalc/bigintcalc.sty" 1576433602 40635 c40361e206be584d448876bba8a64a3b ""
   "C:/Program Files/MiKTeX/tex/generic/bitset/bitset.sty" 1575926576 33961 6b5c75130e435b2bfdb9f480a09a39f9 ""
@@ -57,6 +64,8 @@
   "C:/Program Files/MiKTeX/tex/latex/amscls/amsthm.sty" 1591023609 12594 0d51ac3a545aaaa555021326ff22a6cc ""
   "C:/Program Files/MiKTeX/tex/latex/amsfonts/amsfonts.sty" 1358197772 5949 3f3fd50a8cc94c3d4cbf4fc66cd3df1c ""
   "C:/Program Files/MiKTeX/tex/latex/amsfonts/amssymb.sty" 1358197772 13829 94730e64147574077f8ecfea9bb69af4 ""
+  "C:/Program Files/MiKTeX/tex/latex/amsfonts/umsa.fd" 1358197772 961 6518c6525a34feb5e8250ffa91731cff ""
+  "C:/Program Files/MiKTeX/tex/latex/amsfonts/umsb.fd" 1358197772 961 d02606146ba5601b5645f987c92e6193 ""
   "C:/Program Files/MiKTeX/tex/latex/amsmath/amsbsy.sty" 1655058189 2222 78b930a5a6e3dc2ac69b78c2057b94d7 ""
   "C:/Program Files/MiKTeX/tex/latex/amsmath/amsgen.sty" 1655058191 4173 c989ee3ced31418e3593916ab26c793a ""
   "C:/Program Files/MiKTeX/tex/latex/amsmath/amsmath.sty" 1655058191 88393 1adf6fa3f245270d06e3d4f8910f7fc5 ""
@@ -156,14 +165,20 @@
   "C:/Program Files/MiKTeX/tex/xelatex/xepersian/xepersian.sty" 1667129856 54585 b300d6b8a9c3de50c8d582d10f7f3fd7 ""
   "C:/Program Files/MiKTeX/tex/xelatex/xetex-pstricks/pstricks.con" 1266284760 204 366747485ba2670f55166e66d1f21249 ""
   "C:/Users/Eye Patch/AppData/Local/MiKTeX/miktex/data/le/xetex/xelatex.fmt" 1683914123 36428414 3d658bbc48afc67546175ac8f194f841 ""
-  "HW.aux" 1699701918 555 e69e5f47e820f35bb0a9ca451d75729e "xelatex"
-  "HW.out" 1699701918 0 d41d8cd98f00b204e9800998ecf8427e "xelatex"
-  "HW.tex" 1699700922 328 7abaa475498cfac117a9246cc4c28733 ""
+  "HW.aux" 1699823362 556 ad25c174b3ead785a90d6fcadfb28984 "xelatex"
+  "HW.out" 1699823362 0 d41d8cd98f00b204e9800998ecf8427e "xelatex"
+  "HW.tex" 1699822765 646 3f72e51642b425985dcd1bc3a97f0b2b ""
   "commons/course.sty" 1699697704 6724 71edd84c7605d838b1d5a1f6978ab793 ""
   "commons/sharif.png" 1674235234 34782 91c831e22cd5b8b30cdd0d7fa2b74a71 ""
-  "d:/Term 07/Operating-Systems/Homework 2/HW2/HW.tex" 1699700922 328 7abaa475498cfac117a9246cc4c28733 ""
+  "d:/Term 07/Operating-Systems/Homework 2/HW2/HW.tex" 1699822765 646 3f72e51642b425985dcd1bc3a97f0b2b ""
   "questions/1.tex" 1699700887 7183 3e3d64c5fd735b61384f0e33d68bd06e ""
   "questions/2.tex" 1699701913 1633 ac36810de73fad4b7f2c9fa16ee594b8 ""
+  "questions/3.tex" 1699810993 2703 9c1dadeaba024531c44a47351b07e414 ""
+  "questions/4.tex" 1699823357 2811 3787ddc625655b5d6ad7251990f98b1c ""
+  "questions/5.tex" 1699818606 1140 70b8897941ebeff80b0ea340e90aa9a5 ""
+  "questions/6.tex" 1699819018 1184 66ddbfa651cd4084366ba5b7ee9b4d78 ""
+  "questions/7.tex" 1699819502 1374 69fa30ef9b657c4994e5dbaef97c8639 ""
+  "questions/8.tex" 1699821715 6350 4558f70300c7f68dcff0877ca79c931a ""
   (generated)
   "HW.aux"
   "HW.log"

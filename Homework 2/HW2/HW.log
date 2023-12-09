@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.12) (preloaded format=xelatex 2023.5.12)  11 NOV 2023 14:55
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.12) (preloaded format=xelatex 2023.5.12)  13 NOV 2023 00:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -886,17 +886,92 @@ LaTeX Font Info:    Font shape `TU/XBNiloofar.ttf(1)/m/n' will be
 (Font)              scaled to size 11.99997pt on input line 22.
  [1
 
-]) [2] (questions/2.tex) [3] (HW.aux)
+]) [2] (questions/2.tex) [3] (questions/3.tex
+LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
+ (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
+ (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Font shape `TU/XBNiloofar.ttf(1)/m/n' will be
+(Font)              scaled to size 8.39998pt on input line 2.
+LaTeX Font Info:    Font shape `TU/XBNiloofar.ttf(1)/m/n' will be
+(Font)              scaled to size 5.99998pt on input line 2.
+LaTeX Font Info:    Font shape `TU/XBNiloofar.ttf(1)/bx/n' in size <10> not available
+(Font)              Font shape `TU/XBNiloofar.ttf(1)/b/n' tried instead on input line 2.
+LaTeX Font Info:    Font shape `TU/XBNiloofar.ttf(1)/b/n' will be
+(Font)              scaled to size 11.99997pt on input line 2.
+LaTeX Font Info:    Font shape `TU/XBNiloofar.ttf(1)/bx/n' in size <7> not available
+(Font)              Font shape `TU/XBNiloofar.ttf(1)/b/n' tried instead on input line 2.
+LaTeX Font Info:    Font shape `TU/XBNiloofar.ttf(1)/b/n' will be
+(Font)              scaled to size 8.39998pt on input line 2.
+LaTeX Font Info:    Font shape `TU/XBNiloofar.ttf(1)/bx/n' in size <5> not available
+(Font)              Font shape `TU/XBNiloofar.ttf(1)/b/n' tried instead on input line 2.
+LaTeX Font Info:    Font shape `TU/XBNiloofar.ttf(1)/b/n' will be
+(Font)              scaled to size 5.99998pt on input line 2.
+
+
+LaTeX Font Warning: Font shape `TU/XBNiloofar.ttf(1)/m/it' undefined
+(Font)              using `TU/XBNiloofar.ttf(1)/m/n' instead on input line 2.
+
+LaTeX Font Info:    Font shape `TU/XBNiloofar.ttf(1)/m/it' will be
+(Font)              scaled to size 8.39998pt on input line 2.
+LaTeX Font Info:    Font shape `TU/XBNiloofar.ttf(1)/m/it' will be
+(Font)              scaled to size 5.99998pt on input line 2.
+) [4] (questions/4.tex
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 6.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 8.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 10.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 18.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 20.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 22.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 30.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 32.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 34.
+
+) [5] (questions/5.tex) [6] (questions/6.tex) [7] (questions/7.tex) [8] (questions/8.tex
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 15.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 16.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 17.
+
+[9]) [10] (HW.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
 Package rerunfilecheck Info: File `HW.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 25117 strings out of 411564
- 467957 string characters out of 2824404
+ 25206 strings out of 411564
+ 469661 string characters out of 2824404
  1859985 words of memory out of 3000000
- 44831 multiletter control sequences out of 15000+600000
- 512919 words of font info for 67 fonts, out of 8000000 for 9000
+ 44883 multiletter control sequences out of 15000+600000
+ 514658 words of font info for 80 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  90i,5n,101p,1368b,341s stack positions out of 10000i,1000n,20000p,200000b,80000s
 
-Output written on HW.xdv (3 pages, 52500 bytes).
+Output written on HW.xdv (10 pages, 139624 bytes).
