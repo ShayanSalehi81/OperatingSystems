@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.12) (preloaded format=xelatex 2023.5.12)  9 DEC 2023 14:40
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.12) (preloaded format=xelatex 2023.5.12)  9 DEC 2023 15:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -881,22 +881,64 @@ LaTeX Font Info:    Font shape `TU/XBNiloofar.ttf(0)/b/n' will be
 (Font)              scaled to size 14.39996pt on input line 10.
 LaTeX Font Info:    Font shape `TU/XBNiloofar.ttf(1)/b/n' will be
 (Font)              scaled to size 14.39996pt on input line 10.
-(questions/1.tex)
+(questions/1.tex
+LaTeX Font Info:    Trying to load font information for U+msa on input line 25.
+ (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 25.
+ (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
 LaTeX Font Info:    Font shape `TU/XBNiloofar.ttf(1)/m/n' will be
-(Font)              scaled to size 11.99997pt on input line 12.
- [1
+(Font)              scaled to size 11.99997pt on input line 25.
+LaTeX Font Info:    Font shape `TU/XBNiloofar.ttf(1)/m/n' will be
+(Font)              scaled to size 8.39998pt on input line 25.
+LaTeX Font Info:    Font shape `TU/XBNiloofar.ttf(1)/m/n' will be
+(Font)              scaled to size 5.99998pt on input line 25.
+LaTeX Font Info:    Font shape `TU/XBNiloofar.ttf(1)/bx/n' in size <10> not available
+(Font)              Font shape `TU/XBNiloofar.ttf(1)/b/n' tried instead on input line 25.
+LaTeX Font Info:    Font shape `TU/XBNiloofar.ttf(1)/b/n' will be
+(Font)              scaled to size 11.99997pt on input line 25.
+LaTeX Font Info:    Font shape `TU/XBNiloofar.ttf(1)/bx/n' in size <7> not available
+(Font)              Font shape `TU/XBNiloofar.ttf(1)/b/n' tried instead on input line 25.
+LaTeX Font Info:    Font shape `TU/XBNiloofar.ttf(1)/b/n' will be
+(Font)              scaled to size 8.39998pt on input line 25.
+LaTeX Font Info:    Font shape `TU/XBNiloofar.ttf(1)/bx/n' in size <5> not available
+(Font)              Font shape `TU/XBNiloofar.ttf(1)/b/n' tried instead on input line 25.
+LaTeX Font Info:    Font shape `TU/XBNiloofar.ttf(1)/b/n' will be
+(Font)              scaled to size 5.99998pt on input line 25.
+
+
+LaTeX Font Warning: Font shape `TU/XBNiloofar.ttf(1)/m/it' undefined
+(Font)              using `TU/XBNiloofar.ttf(1)/m/n' instead on input line 25.
+
+LaTeX Font Info:    Font shape `TU/XBNiloofar.ttf(1)/m/it' will be
+(Font)              scaled to size 8.39998pt on input line 25.
+LaTeX Font Info:    Font shape `TU/XBNiloofar.ttf(1)/m/it' will be
+(Font)              scaled to size 5.99998pt on input line 25.
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 64.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 75.
+
+) [1
 
 ] (questions/2.tex) [2] (questions/3.tex) [3] (questions/4.tex) [4] (questions/5.tex) [5] (questions/6.tex) [6] (questions/7.tex) [7] (questions/8.tex) [8] (HW.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
 Package rerunfilecheck Info: File `HW.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 25150 strings out of 411564
- 468415 string characters out of 2824404
- 1845985 words of memory out of 3000000
- 44848 multiletter control sequences out of 15000+600000
- 512911 words of font info for 66 fonts, out of 8000000 for 9000
+ 25201 strings out of 411564
+ 469595 string characters out of 2824404
+ 1859985 words of memory out of 3000000
+ 44880 multiletter control sequences out of 15000+600000
+ 514650 words of font info for 79 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  90i,5n,101p,1368b,339s stack positions out of 10000i,1000n,20000p,200000b,80000s
 
-Output written on HW.xdv (8 pages, 6780 bytes).
+Output written on HW.xdv (8 pages, 22504 bytes).
