@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.12) (preloaded format=xelatex 2023.5.12)  9 DEC 2023 19:04
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.12) (preloaded format=xelatex 2023.5.12)  9 DEC 2023 20:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -925,7 +925,12 @@ LaTeX Font Warning: Command \small invalid in math mode on input line 75.
 
 ) [1
 
-] (questions/2.tex) [2] (questions/3.tex) [3] (questions/4.tex [4]) [5] (questions/5.tex) [6] (questions/6.tex) [7] (questions/7.tex) [8] (questions/8.tex) [9] (HW.aux)
+] (questions/2.tex) [2] (questions/3.tex) [3] (questions/4.tex [4]) [5] (questions/5.tex) [6] (questions/6.tex
+Overfull \hbox (10.68092pt too wide) in paragraph at lines 43--52
+[]\TU/XBNiloofar.ttf(0)/m/n/10 خیر، با اختصاص دو واحد از منبع $\OML/cmm/m/it/10 A$ \TU/XBNiloofar.ttf(0)/m/n/10 به پردازه $\OML/cmm/m/it/10 P[]$ \TU/XBNiloofar.ttf(0)/m/n/10 به حالت []\TU/lmroman10-regular(0)/m/n/10 Deadlock[] \TU/XBNiloofar.ttf(0)/m/n/10 خواهیم رسید. زیراکه در آن لحظه $\OML/cmm/m/it/10 Capacity\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 A\OT1/cmr/m/n/10 ) =$[]
+ []
+
+) [7] (questions/7.tex) [8] (HW.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -933,12 +938,12 @@ Package rerunfilecheck Info: File `HW.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 25206 strings out of 411564
- 469661 string characters out of 2824404
+ 25200 strings out of 411564
+ 469561 string characters out of 2824404
  1859985 words of memory out of 3000000
- 44883 multiletter control sequences out of 15000+600000
+ 44880 multiletter control sequences out of 15000+600000
  514658 words of font info for 80 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 90i,5n,101p,1368b,383s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 90i,8n,101p,1368b,383s stack positions out of 10000i,1000n,20000p,200000b,80000s
 
-Output written on HW.xdv (9 pages, 69240 bytes).
+Output written on HW.xdv (8 pages, 87972 bytes).

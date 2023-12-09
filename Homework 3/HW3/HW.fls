@@ -1119,9 +1119,6 @@ INPUT questions\6.tex
 INPUT .\questions\7.tex
 INPUT questions\7.tex
 INPUT questions\7.tex
-INPUT .\questions\8.tex
-INPUT questions\8.tex
-INPUT questions\8.tex
 INPUT HW.aux
 INPUT .\HW.out
 INPUT .\HW.out

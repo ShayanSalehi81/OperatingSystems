@@ -1,0 +1,64 @@
+\subsection*{الف}
+بله سیستم مورد نظر در حالت
+\lr{safe}
+قرار داشته زیرا که اگر تمام منابع
+\lr{allocate}
+شده را درنظر بگیریم برای منابع
+$A$
+،
+$B$
+و
+$C$
+خواهیم داشت:
+\[
+    Capacity(A) = 2, \quad Capacity(B) = 1, \quad Capacity(C) = 1
+\]
+
+برای اجرا پردازه‌ها نیز می‌توانیم روندی همانند روند زیر را داشته باشیم:
+\[
+    P_3 \to P_2 \to P_4 \to P_1    
+\]
+که روند اجرایی آنها با جزییات به صورت زیر خواهد بود:
+\begin{align*}
+    &Exec(P_3) \\
+    &Capacity(A) = 1, \quad Capacity(B) = 1, \quad Capacity(C) = 1 \\
+    &FreeResource(P_3) \\
+    &Capacity(A) = 7, \quad Capacity(B) = 5, \quad Capacity(C) = 4 \\
+    &Exec(P_2) \\
+    &Capacity(A) = 3, \quad Capacity(B) = 4, \quad Capacity(C) = 4 \\
+    &FreeResource(P_2) \\
+    &Capacity(A) = 8, \quad Capacity(B) = 7, \quad Capacity(C) = 7 \\
+    &Exec(P_4) \\
+    &Capacity(A) = 6, \quad Capacity(B) = 0, \quad Capacity(C) = 7 \\
+    &FreeResource(P_4) \\
+    &Capacity(A) = 10, \quad Capacity(B) = 8, \quad Capacity(C) = 9 \\
+    &Exec(P_1) \\
+    &Capacity(A) = 8, \quad Capacity(B) = 0, \quad Capacity(C) = 8 \\
+    &FreeResource(P_1) \\
+    &Capacity(A) = 12, \quad Capacity(B) = 9, \quad Capacity(C) = 12 \\
+\end{align*}
+که بدون هیچ مشکلی تمام پردازه‌ها اجرا خواهند شد.
+
+\subsection*{ب}
+خیر، با اختصاص دو واحد از منبع
+$A$
+به پردازه
+$P_1$
+به حالت
+\lr{Deadlock}
+خواهیم رسید. زیراکه در آن لحظه
+$Capacity(A) = 0$
+شده و هیچ پردازه‌ای را نمی‌توانیم اجرایش را تمام کنیم که منابعش را آزاد کنیم، برای همین به بن‌بست خواهیم خورد.
+
+\subsection*{ج}
+در اینجا با توجه به دیاگرام اجرای پردازه‌ها در قسمت الف، از آنجایی که پردازه
+$P_1$
+آخرین پردازه‌ای است که اجرا می‌شود، به ظرفیت منابع در خط‌های پردازشی بالای آن نگاه می‌کنیم. از آنجایی که دو بار
+$Capacity(B)$
+به صفر می‌رسد. نمی‌توان از این منابع به این پردازه اختصاص داد در عوض از هر دو منابع
+$A$
+و
+$C$
+در همه حالات یک واحد اضافی داریم که آن را می‌توانیم به پردازه 
+$P_1$
+اختصاص دهیم. (در واقع مینیموم ظرفیت منابع در پردازه‌های قبلی حداکثر ظرفیتی است که در لحظه شروع می‌توان به پردازه اول اختصاص داد.)
