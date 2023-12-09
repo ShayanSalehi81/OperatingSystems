@@ -1,0 +1,104 @@
+\subsection*{الف}
+تفاوت اصلی بین زمان‌بندی 
+\lr{Mesa}
+و
+\lr{Hoare}
+در نحوه بیدار کردن و ادامه دادن به کار فرآیندهایی که در مانیتور منتظر هستند، قرار دارد. در زمان‌بندی نوع
+\lr{Hoare}
+، وقتی یک فرآیند از یک متغیر شرطی برای اعلام بیداری استفاده می‌کند، کنترل فوراً به فرآیند منتظر منتقل می‌شود. این یعنی فرآیندی که اعلام بیداری کرده، باید صبر کنه تا فرآیند منتظر کارش تموم بشه و دوباره کنترل رو به اون برگردونه. این روش کمی پیچیده‌تره ولی باعث می‌شه که اطمینان داشته باشیم فرآیند منتظر به محض بیدار شدن می‌تونه کارش رو ادامه بده.
+
+در مقابل، زمان‌بندی
+\lr{Mesa}
+یه کم متفاوت عمل می‌کنه. تو این روش، وقتی یک فرآیند اعلام بیداری می‌کنه، فرآیند منتظر فقط به صف آماده‌ها منتقل می‌شه ولی کنترل فوراً به اون منتقل نمی‌شه. این یعنی فرآیند منتظر باید دوباره منتظر بمونه تا نوبتش برسه. این روش ساده‌تره ولی ممکنه باعث شه که فرآیندهای منتظر زمان بیشتری رو در انتظار بگذرونن. پس در حالی که
+\lr{Mesa}
+به لحاظ برنامه‌نویسی راحت‌تره، ممکنه از نظر کارایی کمی ضعیف‌تر از
+\lr{Hoare}
+باشه.
+
+\subsection*{ب}
+برای این قسمت خواهیم داشت:
+\LTR
+\begin{verbatim}
+    public class Semaphore {
+        public int value;
+        public Lock lock;
+        public CondVar condition;
+
+        public Semaphore (int initalValue) {
+            /* Create and return a semaphore with initial value: initialValue */
+            value = initalValue;
+            condition = New CondVar();
+            lock = New Lock()
+        }
+
+        public P() {
+            /* Call P() on the semaphore */
+            lock.Aqurie();
+            while (value <= 0) {
+                condition.wait();
+            }
+            value -= 1;
+            lock.Release();
+        }
+
+        public V() {
+            /* Call V() on the semaphore */
+            lock.Aquire();
+            value += 1;
+            condition.Signal();
+            lock.Release();
+        }
+    }
+\end{verbatim}
+\RTL
+که به این ترتیب می‌توان یک
+\lr{Semaphore}
+با استفاده از
+\lr{Lock}
+داشته باشیم.
+
+\subsection*{ج}
+حال اگر بخواهیم
+\lr{Lock}
+را براساس
+\lr{Semaphore}
+داشته باشیم خواهیم داشت:
+\LTR
+\begin{verbatim}
+    public class Lock {
+        public Semaphore s;
+
+        public Lock() {
+            /* Create new Lock */
+            s = new Semaphore(1);
+        }
+
+        public void Acquire() {
+            /* Acquire Lock */
+            s.P();
+        }
+
+        public void Release() {
+            /* Release Lock */
+            s.V();
+        }
+    }
+\end{verbatim}
+\RTL
+که با ازای هر
+\lr{Lock}
+یک سمافور با مقدار اولیه
+$S = 1$
+خواهیم داشت.
+
+\subsection*{د}
+تفاوت این دو در این خواهد بود که
+\verb|CondVar.Signal()|
+تنها در زمانی ریسورس را آزاد می‌کند که پردازه دیگری در حالت
+\verb|Wait()|
+باشد و در حالتی که پردازه‌ای در این حالت نداشته باشیم کاری انجام نمی‌دهد. اما در طرف مقابل با هربار صدا زدن تابع
+\verb|V()|
+در سمافور یک مقدار به مقدار اولیه آن اضافه شده، حتی در حالتی که هیچ پردازه‌ای در حالت
+\verb|Wait()|
+نداشته باشیم. که این در ادامه برنامه ممکن است برنامه را دچار ایراد کند.
+

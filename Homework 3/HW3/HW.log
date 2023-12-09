@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.12) (preloaded format=xelatex 2023.5.12)  9 DEC 2023 18:22
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.12) (preloaded format=xelatex 2023.5.12)  9 DEC 2023 19:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -925,7 +925,7 @@ LaTeX Font Warning: Command \small invalid in math mode on input line 75.
 
 ) [1
 
-] (questions/2.tex) [2] (questions/3.tex) [3] (questions/4.tex) [4] (questions/5.tex) [5] (questions/6.tex) [6] (questions/7.tex) [7] (questions/8.tex) [8] (HW.aux)
+] (questions/2.tex) [2] (questions/3.tex) [3] (questions/4.tex [4]) [5] (questions/5.tex) [6] (questions/6.tex) [7] (questions/7.tex) [8] (questions/8.tex) [9] (HW.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -939,6 +939,6 @@ Here is how much of TeX's memory you used:
  44883 multiletter control sequences out of 15000+600000
  514658 words of font info for 80 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 90i,5n,101p,1368b,339s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 90i,5n,101p,1368b,383s stack positions out of 10000i,1000n,20000p,200000b,80000s
 
-Output written on HW.xdv (8 pages, 31756 bytes).
+Output written on HW.xdv (9 pages, 69240 bytes).
