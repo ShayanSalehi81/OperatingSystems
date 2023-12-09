@@ -1,10 +1,10 @@
 # Fdb version 4
-["xdvipdfmx"] 1702121733 "HW.xdv" "HW.pdf" "HW" 1702121733 0
-  "HW.xdv" 1702121732 22504 3574a3b67ba69581a2d37f2737343a5f "xelatex"
+["xdvipdfmx"] 1702133525 "HW.xdv" "HW.pdf" "HW" 1702133525 0
+  "HW.xdv" 1702133524 31756 11685f32082e5b307abeca500cf20217 "xelatex"
   (generated)
   "HW.pdf"
   (rewritten before read)
-["xelatex"] 1702121730 "d:/Term 07/Operating-Systems/Homework 3/HW3/HW.tex" "HW.xdv" "HW" 1702121733 0
+["xelatex"] 1702133521 "d:/Term 07/Operating-Systems/Homework 3/HW3/HW.tex" "HW.xdv" "HW" 1702133525 0
   "C:/Program Files/MiKTeX/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136759654 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1233951854 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -165,14 +165,14 @@
   "C:/Program Files/MiKTeX/tex/xelatex/xepersian/xepersian.sty" 1667129856 54585 b300d6b8a9c3de50c8d582d10f7f3fd7 ""
   "C:/Program Files/MiKTeX/tex/xelatex/xetex-pstricks/pstricks.con" 1266284760 204 366747485ba2670f55166e66d1f21249 ""
   "C:/Users/Eye Patch/AppData/Local/MiKTeX/miktex/data/le/xetex/xelatex.fmt" 1683914123 36428414 3d658bbc48afc67546175ac8f194f841 ""
-  "HW.aux" 1702121732 555 79d6996a539c859f65a3c62bf3ae862b "xelatex"
-  "HW.out" 1702121732 0 d41d8cd98f00b204e9800998ecf8427e "xelatex"
+  "HW.aux" 1702133524 555 79d6996a539c859f65a3c62bf3ae862b "xelatex"
+  "HW.out" 1702133524 0 d41d8cd98f00b204e9800998ecf8427e "xelatex"
   "HW.tex" 1702120203 646 59629b9708652256101a7fa9ea44b008 ""
   "commons/course.sty" 1699697704 6724 71edd84c7605d838b1d5a1f6978ab793 ""
   "commons/sharif.png" 1674235234 34782 91c831e22cd5b8b30cdd0d7fa2b74a71 ""
   "d:/Term 07/Operating-Systems/Homework 3/HW3/HW.tex" 1702120203 646 59629b9708652256101a7fa9ea44b008 ""
   "questions/1.tex" 1702121729 3075 414099f2f62f21f10ef25bc482f02c53 ""
-  "questions/2.tex" 1702120209 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "questions/2.tex" 1702133521 1731 513dcc65976bf50c28a236c1fbac6d37 ""
   "questions/3.tex" 1702120212 0 d41d8cd98f00b204e9800998ecf8427e ""
   "questions/4.tex" 1702120216 0 d41d8cd98f00b204e9800998ecf8427e ""
   "questions/5.tex" 1702120221 0 d41d8cd98f00b204e9800998ecf8427e ""
