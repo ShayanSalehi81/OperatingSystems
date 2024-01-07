@@ -1,0 +1,64 @@
+\subsection*{الف}
+در اینجا از آنجایی که میانگین زمان دسترسی به حافظه 
+$50ns$
+بوده و دسترسی
+\lr{TLB}
+هم
+$10ns$
+است. حال دو حالت داریم:
+\begin{itemize}
+    \item
+    در حالت
+    \lr{TLB hit}
+    زمان دسترسی به این صورت است:
+    \[
+        time\,to\,access\,memory = 10\,ns(TLB) + 50\,ns(Memory) = 60\,ns    
+    \]
+
+    \item
+    در حالت
+    \lr{TLB miss}
+    داریم:
+    \[
+        time\,to\,access\,memory = 10\,ns(TLB) + 50\,ns(Page Table) + 50\,ns(Memory) = 110\,ns    
+    \]
+\end{itemize}
+حال با توجه به ضریب
+\lr{TLB}
+۵۰ درصد خواهیم داشت:
+\[
+    Avarage\,Time = \frac{1}{2} \times 60\,ns + \frac{1}{2} \times 110\,ns = 85\,ns    
+\]
+
+حال درصورتی که
+\lr{TLB}
+نداشته باشیم داریم:
+\[
+    Avarage\,Time = 50\,ns(Page Table) + 50\,ns(Memory) = 100\,ns   
+\]
+
+با قیاس کردن این دو حالت می‌توان فهمید که روش
+\lr{TLB}
+با ضریب ۵۰ درصد می‌تواند میانگین زمان دسترسی را ۱۵ نانو ثانیه کاهش دهد.
+
+\subsection*{ب}
+اگر ضریب
+\lr{hit rate}
+را
+$H$
+در نظر گرفته و زمان میانگین را
+$T$
+در نظر بگیریم داریم:
+\[
+    T = H \times (Time\,for\,TLB\,hit)  + (1 - H) \times (Time\,for\,TLB\,miss)
+\]
+پس داریم:
+\[
+    T = 61\,ns, \quad Time\,for\,TLB\,hit = 60\,ns, \quad Time\,for\,TLB\,miss = 110\,ns
+\]
+\[
+    \implies 61 = H \times 60 + (1 - H) \times 110 \implies 50 H = 49 \implies H = 0.98
+\]
+بنابراین ضریب
+\lr{TLB}
+می‌بایست ۹۸ درصد باشد تا میانگین زمان ۶۱ نانو ثانیه شود..
