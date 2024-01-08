@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.12) (preloaded format=xelatex 2023.5.12)  7 JAN 2024 19:04
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.12) (preloaded format=xelatex 2023.5.12)  8 JAN 2024 14:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -957,7 +957,19 @@ LaTeX Font Warning: Command \small invalid in math mode on input line 19.
 ) [4] (questions/5.tex
 LaTeX Font Info:    Font shape `TU/XBNiloofar.ttf(0)/m/n' will be
 (Font)              scaled to size 5.99998pt on input line 9.
-) [5] (questions/6.tex) [6] (questions/7.tex) [7] (HW.aux)
+) [5] (questions/6.tex [6] [7] [8]) [9] (questions/7.tex
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 11.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 14.
+
+)
+Overfull \hbox (4.80643pt too wide) in paragraph at lines 24--35
+[][]\TU/XBNiloofar.ttf(0)/m/n/10 اجتناب از بارهای اضافی همگام‌سازی: به اشتراک گذاشتن مخازن حافظه بین پردازنده‌ها یا هسته‌ها نیازمند مکانیزم‌های[]
+ []
+
+[10] (HW.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -965,12 +977,12 @@ Package rerunfilecheck Info: File `HW.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 25197 strings out of 411564
- 469610 string characters out of 2824404
- 1860985 words of memory out of 3000000
- 44878 multiletter control sequences out of 15000+600000
- 514658 words of font info for 80 fonts, out of 8000000 for 9000
+ 25204 strings out of 411564
+ 469698 string characters out of 2824404
+ 1864985 words of memory out of 3000000
+ 44883 multiletter control sequences out of 15000+600000
+ 514666 words of font info for 81 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 90i,5n,101p,1368b,341s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 90i,8n,101p,1368b,350s stack positions out of 10000i,1000n,20000p,200000b,80000s
 
-Output written on HW.xdv (7 pages, 67932 bytes).
+Output written on HW.xdv (10 pages, 146952 bytes).
