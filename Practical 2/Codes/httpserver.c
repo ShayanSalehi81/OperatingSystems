@@ -30,6 +30,8 @@ int server_port;
 char *server_files_directory;
 char *server_proxy_hostname;
 int server_proxy_port;
+const char *http_get_mime_type(const char *path);
+
 
 /*
  * Serves the contents the file stored at `path` to the client socket `fd`.
@@ -40,25 +42,92 @@ int server_proxy_port;
  *            sesnsitive to time-out errors.
  */
 void serve_file(int fd, char *path) {
+    int file_fd = open(path, O_RDONLY);
+    if (file_fd < 0) {
+        http_start_response(fd, 404);
+        http_send_header(fd, "Content-Type", "text/html");
+        http_end_headers(fd);
+    } else {
+        struct stat statbuf;
+        if (fstat(file_fd, &statbuf) < 0) {
+            // Handle error if fstat fails
+            close(file_fd);
+            return;
+        }
 
-  http_start_response(fd, 200);
-  http_send_header(fd, "Content-Type", http_get_mime_type(path));
-  http_send_header(fd, "Content-Length", "0"); // Change this too
-  http_end_headers(fd);
+        long length = statbuf.st_size;
+        char content_length[20];
+        snprintf(content_length, sizeof(content_length), "%ld", length);
 
-  /* TODO: PART 1 Bullet 2 */
+        http_start_response(fd, 200);
+        http_send_header(fd, "Content-Type", http_get_mime_type(path));
+        http_send_header(fd, "Content-Length", content_length);
+        http_end_headers(fd);
 
+        void *file_memory = mmap(NULL, length, PROT_READ, MAP_PRIVATE, file_fd, 0);
+        if (file_memory == MAP_FAILED) {
+            // mmap failed, handle error
+            close(file_fd);
+            return;
+        }
+
+        http_send_data(fd, (const char *)file_memory, length);
+        munmap(file_memory, length);
+        close(file_fd);
+    }
+    close(fd);
 }
 
 void serve_directory(int fd, char *path) {
-  http_start_response(fd, 200);
-  http_send_header(fd, "Content-Type", http_get_mime_type(".html"));
-  http_end_headers(fd);
+    char index_path[1024];
+    snprintf(index_path, sizeof(index_path), "%s/index.html", path);
+    FILE *index_file = fopen(index_path, "r");
+    if (index_file) {
+        fclose(index_file);
+        serve_file(fd, index_path);
+        return;
+    }
 
-  /* TODO: PART 1 Bullet 3,4 */
+    DIR *dir = opendir(path);
+    if (!dir) {
+        http_start_response(fd, 404);
+        http_send_header(fd, "Content-Type", "text/html");
+        http_end_headers(fd);
+    } else {
+        http_start_response(fd, 200);
+        http_send_header(fd, "Content-Type", "text/html");
+        http_end_headers(fd);
 
+        const char *header = "<html><body><h2>Directory listing for ";
+        const char *footer = "</h2></body></html>";
+        char *body = malloc(4096); // Initial buffer size
+        strcpy(body, header);
+        strcat(body, path);
+        strcat(body, "</h2><ul>");
+
+        struct dirent *entry;
+        while ((entry = readdir(dir)) != NULL) {
+            if (strcmp(entry->d_name, ".") == 0 || strcmp(entry->d_name, "..") == 0) {
+                continue;
+            }
+            char *entryLink = malloc(strlen(entry->d_name) + 32); // Allocate space for the link
+            snprintf(entryLink, strlen(entry->d_name) + 32, "<li><a href='./%s'>%s</a></li>\n", entry->d_name, entry->d_name);
+            if (strlen(body) + strlen(entryLink) + strlen(footer) >= 4096) {
+                // Increase buffer size
+                body = realloc(body, strlen(body) + strlen(entryLink) + strlen(footer) + 1024);
+            }
+            strcat(body, entryLink);
+            free(entryLink);
+        }
+        strcat(body, "</ul>");
+        strcat(body, footer);
+
+        http_send_string(fd, body);
+        free(body);
+        closedir(dir);
+    }
+    close(fd);
 }
-
 
 /*
  * Reads an HTTP request from stream (fd), and writes an HTTP response
@@ -74,56 +143,80 @@ void serve_directory(int fd, char *path) {
  *   Closes the client socket (fd) when finished.
  */
 void handle_files_request(int fd) {
+    // Parse the HTTP request
+    struct http_request *request = http_request_parse(fd);
+    if (!request || request->path[0] != '/') {
+        http_start_response(fd, 400);
+    } else if (strstr(request->path, "..")) {
+        http_start_response(fd, 403);
+    } else {
+        char resolved_path[1024];
+        snprintf(resolved_path, sizeof(resolved_path), "%s%s", server_files_directory, request->path);
 
-  struct http_request *request = http_request_parse(fd);
+        struct stat path_stat;
+        if (stat(resolved_path, &path_stat) != 0) {
+            http_start_response(fd, 404);
+        } else {
+            if (S_ISREG(path_stat.st_mode)) {
+                serve_file(fd, resolved_path);
+                goto cleanup; // Avoid closing fd twice
+            } else if (S_ISDIR(path_stat.st_mode)) {
+                serve_directory(fd, resolved_path);
+                goto cleanup; // Avoid closing fd twice
+            } else {
+                http_start_response(fd, 404);
+            }
+        }
+    }
 
-  if (request == NULL || request->path[0] != '/') {
-    http_start_response(fd, 400);
     http_send_header(fd, "Content-Type", "text/html");
     http_end_headers(fd);
+
+cleanup:
+    if (request) {
+        printf("Request fulfilled\n");
+        free(request);
+    }
     close(fd);
-    return;
-  }
-
-  if (strstr(request->path, "..") != NULL) {
-    http_start_response(fd, 403);
-    http_send_header(fd, "Content-Type", "text/html");
-    http_end_headers(fd);
-    close(fd);
-    return;
-  }
-
-  /* Remove beginning `./` */
-  char *path = malloc(2 + strlen(request->path) + 1);
-  path[0] = '.';
-  path[1] = '/';
-  memcpy(path + 2, request->path, strlen(request->path) + 1);
-
-  /* 
-   * TODO: First is to serve files. If the file given by `path` exists,
-   * call serve_file() on it. Else, serve a 404 Not Found error below.
-   *
-   * TODO: Second is to serve both files and directories. You will need to
-   * determine when to call serve_file() or serve_directory() depending
-   * on `path`.
-   *  
-   * Feel FREE to delete/modify anything on this function.
-   */
-
-  http_start_response(fd, 200);
-  http_send_header(fd, "Content-Type", "text/html");
-  http_end_headers(fd);
-  http_send_string(fd,
-      "<center>"
-      "<h1>Welcome to httpserver!</h1>"
-      "<hr>"
-      "<p>Nothing's here yet.</p>"
-      "</center>");
-
-  close(fd);
-  return;
 }
 
+typedef struct {
+    int src;
+    int dest;
+    pthread_cond_t *cond;
+    int *is_finished;
+} proxy_struct;
+
+void *proxy_thread(void *args) {
+    proxy_struct *proxyStruct = (proxy_struct *)args;
+    int srcFd = proxyStruct->src;
+    int destFd = proxyStruct->dest;
+    pthread_cond_t *signalCond = proxyStruct->cond;
+
+    ssize_t bytesRead;
+    char buffer[1024];
+    memset(buffer, 0, sizeof(buffer));
+
+    while (!(*proxyStruct->is_finished)) {
+        bytesRead = read(srcFd, buffer, sizeof(buffer) - 1);
+        if (bytesRead <= 0) {
+            break; // Exit if read error or EOF
+        }
+        buffer[bytesRead] = '\0';
+        printf("message: %s\n", buffer);
+        write(destFd, buffer, bytesRead); // Use write for sending data
+    }
+
+    *proxyStruct->is_finished = 1;
+    if (signalCond != NULL) {
+        pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
+        pthread_mutex_lock(&mutex);
+        pthread_cond_broadcast(signalCond);
+        pthread_mutex_unlock(&mutex);
+    }
+
+    return NULL;
+}
 
 /*
  * Opens a connection to the proxy target (hostname=server_proxy_hostname and
@@ -183,17 +276,45 @@ void handle_proxy_request(int fd) {
     return;
 
   }
-
-  /* 
-  * TODO: Your solution for task 3 belongs here! 
-  */
 }
 
 
-void init_thread_pool(int num_threads, void (*request_handler)(int)) {
-  /*
-   * TODO: Part of your solution for Task 2 goes here!
-   */
+typedef struct {
+    void (*handler)(int socket);
+} worker_args;
+
+void worker_routine(void *parameters) {
+    worker_args *workerParams = (worker_args *)parameters;
+    for (;;) {
+        int socketDescriptor = wq_pop(&work_queue);
+        if (socketDescriptor >= 0) {
+            workerParams->handler(socketDescriptor);
+            close(socketDescriptor);
+        } else {
+            break;
+        }
+    }
+    free(parameters);
+}
+
+void init_thread_pool(int threadCount, void (*handlerFunc)(int)) {
+    pthread_t *threads = malloc(sizeof(pthread_t) * threadCount);
+    if (!threads) return;
+
+    for (int i = 0; i < threadCount; ++i) {
+        worker_args *args = malloc(sizeof(worker_args));
+        if (args) {
+            *args = (worker_args){.handler = handlerFunc}; 
+            if (pthread_create(&threads[i], NULL, (void *(*)(void *))worker_routine, args) != 0) {
+                free(args);
+            }
+        }
+    }
+
+    for (int i = 0; i < threadCount; ++i) {
+        pthread_join(threads[i], NULL);
+    }
+    free(threads); // Cleanup
 }
 
 /*
@@ -253,13 +374,14 @@ void serve_forever(int *socket_number, void (*request_handler)(int)) {
         inet_ntoa(client_address.sin_addr),
         client_address.sin_port);
 
-    // TODO: Change me?
-    request_handler(client_socket_number);
-    close(client_socket_number);
+    wq_init(&work_queue);
 
-    printf("Accepted connection from %s on port %d\n",
-        inet_ntoa(client_address.sin_addr),
-        client_address.sin_port);
+    if (num_threads == 0) {
+      request_handler(client_socket_number);
+      close(client_socket_number);
+    } else {
+      wq_push(&work_queue, client_socket_number);
+    }
   }
 
   shutdown(*socket_number, SHUT_RDWR);
