@@ -107,7 +107,7 @@ int main(int argc, char *argv[]) {
     close(pipeline_fd[0]);
     close(pipeline_fd[1]);
 
-    printf("The Result Matrix: \n")
+    printf("The Result Matrix: \n");
     for (int i = 0; i < M; ++i) {
         for (int j = 0; j < N; j++) {
             printf("%d\t", result[i][j]);
