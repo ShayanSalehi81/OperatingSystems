@@ -12,6 +12,7 @@
 #include <sys/socket.h>
 #include <sys/stat.h>
 #include <sys/types.h>
+#include <sys/mman.h>
 #include <unistd.h>
 #include <unistd.h>
 
@@ -30,8 +31,6 @@ int server_port;
 char *server_files_directory;
 char *server_proxy_hostname;
 int server_proxy_port;
-const char *http_get_mime_type(const char *path);
-
 
 /*
  * Serves the contents the file stored at `path` to the client socket `fd`.
