@@ -1,0 +1,5 @@
+.monaco-editor [dir="ltr"] {
+    direction: rtl;
+    float: right;
+    padding-right: 20px;
+}

@@ -1,5 +1,7 @@
 {
     "files.associations": {
         "mm_alloc.h": "c"
-    }
+    },
+
+    "editor.wordWrap": "bounded",
 }

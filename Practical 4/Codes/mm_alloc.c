@@ -1,4 +1,6 @@
 #include "mm_alloc.h"
+#include <sys/sysinfo.h>
+#include <sys/mman.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h> 
@@ -6,6 +8,9 @@
 /* Your final implementation should comment out this macro. */
 
 s_block_ptr base = NULL;
+size_t available_memory;
+size_t total_allocated_memory = 0;
+size_t max_memory_limit;
 
 s_block_ptr find_block(s_block_ptr *last, size_t size) {
     s_block_ptr b = base;
@@ -14,6 +19,13 @@ s_block_ptr find_block(s_block_ptr *last, size_t size) {
         b = b->next;
     }
     return b;
+}
+
+void init_allocator() {
+    struct sysinfo info;
+    sysinfo(&info);
+    available_memory = info.freeram; 
+    max_memory_limit = info.freeram; 
 }
 
 void split_block(s_block_ptr b, size_t size) {
@@ -45,12 +57,19 @@ s_block_ptr get_block(void *p) {
     return (p = tmp -= BLOCK_SIZE);
 }
 
-
 s_block_ptr extend_heap(s_block_ptr last, size_t size) {
-    s_block_ptr b;
-    b = (s_block_ptr)sbrk(0);
-    if (sbrk(BLOCK_SIZE + size) == (void*)-1)
+    if (total_allocated_memory + size + BLOCK_SIZE > max_memory_limit) {
         return NULL;
+    }
+
+    void* ptr = sbrk(0);
+    if (sbrk(BLOCK_SIZE + size) == (void*)-1) {
+        return NULL;
+    }
+
+    total_allocated_memory += size + BLOCK_SIZE; // Update allocated memory
+
+    s_block_ptr b = (s_block_ptr)ptr;
     b->size = size;
     b->next = NULL;
     b->prev = last;
@@ -71,8 +90,16 @@ int valid_addr(void *p) {
 }
 
 void* mm_malloc(size_t size) {
+    static int is_initialized = 0;
+
+    if (!is_initialized) {
+        init_allocator();
+        is_initialized = 1;
+    }
+
     s_block_ptr b, last;
     size_t s;
+    
     s = size;
     if (base) {
         last = base;
@@ -131,6 +158,7 @@ void mm_free(void* ptr) {
     s_block_ptr b;
     if (valid_addr(ptr)) {
         b = get_block(ptr);
+        total_allocated_memory -= b->size + BLOCK_SIZE;
         b->free = 1;
         if (b->prev && b->prev->free)
             b = fusion(b->prev);
@@ -145,3 +173,4 @@ void mm_free(void* ptr) {
         }
     }
 }
+

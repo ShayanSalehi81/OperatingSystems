@@ -186,6 +186,14 @@ typedef struct {
     int *is_finished;
 } proxy_struct;
 
+void forward_data(int src_fd, int dest_fd) {
+    char buffer[4096];
+    ssize_t bytes_read;
+    while ((bytes_read = read(src_fd, buffer, sizeof(buffer))) > 0) {
+        write(dest_fd, buffer, bytes_read);
+    }
+}
+
 void *proxy_thread(void *args) {
     proxy_struct *proxyStruct = (proxy_struct *)args;
     int srcFd = proxyStruct->src;
@@ -228,6 +236,19 @@ void *proxy_thread(void *args) {
  *   | client | <-> | httpserver | <-> | proxy target |
  *   +--------+     +------------+     +--------------+
  */
+
+typedef struct {
+    int src_fd; // Source file descriptor
+    int dest_fd; // Destination file descriptor
+} fd_pair;
+
+void *forward_data_thread(void *arg) {
+    fd_pair *fdp = (fd_pair *)arg;
+    forward_data(fdp->src_fd, fdp->dest_fd);
+    close(fdp->src_fd); // Close the source file descriptor after forwarding
+    return NULL;
+}
+
 void handle_proxy_request(int fd) {
 
   /*
@@ -273,8 +294,29 @@ void handle_proxy_request(int fd) {
     close(target_fd);
     close(fd);
     return;
-
   }
+
+  fd_pair client_to_target = {fd, target_fd};
+  fd_pair target_to_client = {target_fd, fd};
+
+  pthread_t t1, t2;
+
+  if(pthread_create(&t1, NULL, forward_data_thread, &client_to_target) != 0) {
+      perror("pthread_create for client_to_target failed");
+      close(fd);
+      close(target_fd);
+      return;
+  }
+  if(pthread_create(&t2, NULL, forward_data_thread, &target_to_client) != 0) {
+      perror("pthread_create for target_to_client failed");
+      pthread_cancel(t1);
+      close(fd);
+      close(target_fd);
+      return;
+  }
+
+  pthread_join(t1, NULL);
+  pthread_join(t2, NULL);
 }
 
 
